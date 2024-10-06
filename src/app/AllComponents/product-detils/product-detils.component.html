@@ -1,0 +1,46 @@
+@if (_SpecificCategoies !=null) {
+<section class="w-10/12 md:w-9/12  mx-auto overflow-hidden my-8 bg-green-50 border border-green-400 rounded-2xl">
+
+    <div class="flex flex-row-reverse ">
+        <i routerLink="/home" class="block  fa-solid fa-close text-red-500 font-bold text-2xl p-4 cursor-pointer "></i>
+    </div>
+    <div class="grid  grid-cols-12 items-center justify-center">
+        <div class="col-span-12 md:col-span-4  p-5 animate__animated animate__fadeInRight ">
+            <owl-carousel-o [options]="customOptionsDeitlse">
+                @for (img of _SpecificCategoies.images; track $index) {
+                <ng-template carouselSlide>
+                    <img [src]="img" [alt]="_SpecificCategoies.title">
+                </ng-template>
+
+                }
+
+            </owl-carousel-o>
+
+        </div>
+        <div class="col-span-12 md:col-span-8  p-5 animate__animated animate__fadeInLeft">
+            <p>{{_SpecificCategoies.description}}</p>
+            <p class="text-slate-500 my-2">{{_SpecificCategoies.title}}</p>
+            <p class="text-main font-bold ">{{_SpecificCategoies.category.name}}</p>
+
+            <div class="flex justify-between items-center py-2 ">
+                <span>{{_SpecificCategoies.price}} <span class="font-bold">EGP</span></span>
+                <div>
+
+                    @for (item of [1,2,3,4,5].slice(0,_SpecificCategoies.ratingsAverage); track $index) {
+                    <span><i class="fa-solid fa-star rating-color"></i></span>
+
+                    }
+                    <span class="px-1">{{_SpecificCategoies.ratingsAverage}}</span>
+
+
+                </div>
+
+            </div>
+
+            <button class="btn-main w-full my-1">ADD TOO CART </button>
+
+
+        </div>
+    </div>
+</section>
+}

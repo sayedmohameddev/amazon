@@ -1,0 +1,111 @@
+<section class="checkout">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-10/12 mx-auto">
+        <div>
+            <div class="w-full mx-auto p-5 shadow-sm-light rounded-3xl bg-slate-50  ">
+
+                <h2 class="text-2xl text-main">checkout now :</h2>
+                <form [formGroup]="userData" class="animate__animated animate__fadeInLeft  py-4 w-10/12 mx-auto"
+                    (ngSubmit)="checkout()">
+
+                    <!--<< input detilse >>-->
+                    <div class="py-0.5">
+                        <label class="font-semibold px-1" for="userdetails">Details</label>
+                        <input formControlName="details" id="userdetails"
+                            class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+                        @if (userData.get('details')?.errors && userData.get('details')?.touched) {
+                        <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                            @if (userData.get('details')?.errors?.['required']) {
+                            <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+                            </p>}
+                            @else if (userData.get('details')?.errors?.['minlength']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn px-2">Your
+                                details must be at least 3 letters long
+                            </p>
+                            }
+
+                        </div>
+                        }
+                    </div>
+
+
+                    <!--<< input phone >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="phone">phone</label>
+                        <input formControlName="phone" id="phone" placeholder=""
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="tel">
+
+                        @if (userData.get('phone')?.errors && userData.get('phone')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (userData.get('phone')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (userData.get('phone')?.errors?.['pattern']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">this phone
+                                number is
+                                Invalid
+                            </p>
+                            }
+                        </div>
+                        }
+
+
+                    </div>
+
+
+                    <div class="py-0.5">
+                        <label class="font-semibold px-1" for="usercity">city</label>
+                        <input formControlName="city" id="usercity"
+                            class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+                        @if (userData.get('city')?.errors && userData.get('city')?.touched) {
+                        <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                            @if (userData.get('city')?.errors?.['required']) {
+                            <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+                            </p>}
+                            @else if (userData.get('city')?.errors?.['minlength']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn px-2">Your
+                                city must be at least 3 letters long
+                            </p>
+                            }
+
+                        </div>
+                        }
+                    </div>
+
+
+
+
+
+                    <!--<< btn >>-->
+                    <div class="flex md:flex-row md:justify-end  justify-center   pt-3 items-center flex-col">
+                        @if ( userData ) {
+                        <div class="grow text-center animate__animated animate__bounceIn md:me-10 m-auto my-1">
+                            @if (errorMessege) {
+                            <h2 class=" py-1 px-8 bg-orange-400 rounded-lg text-white font-semibold">
+                                {{errorMessege}}</h2>
+                            }
+                        </div>
+                        }
+
+
+                        <button [disabled]="userData.invalid||isLoding" type="submit"
+                            class="btn-main hover:px-10 transition-all disabled:bg-red-400 ">
+                            @if (isLoding) {<i class="fa-solid fa-spinner fa-spin px-2"></i>}Check out</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+
+        <div class="animate__animated animate__fadeInRight">
+            <div><img class="p-20" src="./assets/images/auth/checkout.jpg" alt=""></div>
+        </div>
+
+    </div>
+
+</section>

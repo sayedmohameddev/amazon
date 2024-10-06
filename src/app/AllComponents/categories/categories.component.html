@@ -1,0 +1,64 @@
+<section class="overflow-hidden my-8 shadow-lg mx-auto " class="animate__animated animate__fadeInRightBig">
+    <div class="grid grid-cols-12 py-5 px-2 shadow-md">
+        <div class="col-span-6 md:col-span-8">
+            <owl-carousel-o [options]="customOptionsHomeSlider">
+                @for (item of _sliderImage; track $index) {
+                <ng-template carouselSlide>
+                    <div class="px-2 py-3">
+                        <img class="h-[21rem] w-full cursor-pointer" [src]="item.image">
+                    </div>
+                </ng-template>
+                }
+            </owl-carousel-o>
+
+        </div>
+
+        <div class="col-span-6 md:col-span-4">
+            <img class="h-[22rem] w-full" src="./assets/images/CategoriesOffers/catOffer15.jpg" alt="">
+        </div>
+
+
+    </div>
+
+
+
+
+</section>
+
+
+
+
+
+
+<section class="py-8">
+    <div class="grid grid-cols-2 md:grid-cols-4   gap-2 w-11/12 mx-auto">
+        @for (categories of _categoriseOffers; track $index) {
+        <div class="product p-2 relative">
+            <div class="text-center mx-auto" [routerLink]="['/categoriesdetils' , categories._id]">
+                <img class="w-full h-96 " [src]="categories.image" [alt]="categories.name">
+            </div>
+
+        </div>
+
+        }
+
+    </div>
+</section>
+
+
+<section class="py-8">
+
+    <div class="grid grid-cols-2 md:grid-cols-4   gap-2 w-11/12 mx-auto">
+        @for (categories of allCategories; track $index) {
+        <div class="product p-2 relative">
+            <div class="text-center mx-auto" >
+                <img class=" w-full h-96 " [src]=" categories.image" [alt]="categories.name">
+            </div>
+
+        </div>
+
+        }
+
+
+    </div>
+</section>

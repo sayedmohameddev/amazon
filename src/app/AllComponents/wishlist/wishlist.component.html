@@ -1,0 +1,37 @@
+@if(alllProductsWishlist){
+<section class="">
+    <p class="text-center text-4xl py-4  mb-2 shadow-md font-bold ">your wishlist</p>
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 gap-2 w-11/12 mx-auto">
+        @for (product of alllProductsWishlist ; track $index) {
+        <div class="product p-2 relative">
+            <div class="absolute heart">
+                <i (click)="removeProductWishlist(product._id)"
+                    class=" cursor-pointer fa-solid fa-heart-crack text-2xl text-slat-600 hover:text-red-600 "></i>
+            </div>
+            <div>
+                <img class="h-80 w-full" [src]="product?.imageCover" [alt]="product.title">
+                <h2 class="">{{product?.category?.name}}</h2>
+
+                <div class="flex justify-between items-center py-2 ">
+                    <span>{{product?.price}} EGP</span>
+                    <div>
+                        @for (item of [1,2,3,4,5].slice(0,product?.ratingsAverage); track $index) {
+                        <span><i class="fa-solid fa-star rating-color"></i></span>
+                        }
+                        <span class="px-1">{{product?.ratingsAverage}}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+
+</section>
+}
+<br #koko>
+@defer (on viewport(koko)) {
+
+<div class="py-4">
+    <app-recmmendproducts></app-recmmendproducts>
+</div>
+}

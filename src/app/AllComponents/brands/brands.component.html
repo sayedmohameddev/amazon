@@ -1,0 +1,21 @@
+<section class="py-8">
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 w-11/12 mx-auto gap-4 cursor-pointer"> @for (brand of
+        _allBrands.slice(1,16) ; track $index) {
+        <div class="product border border-green-400  overflow-hidden">
+            <img class=" animate__animated animate__wobble" [src]="brand.image" alt="">
+        </div>
+        }
+    </div>
+
+    <p class="my-9 shadow-sm  text-4xl text-main text-center">عروض متتفوتش علي ايفون 13 </p>
+
+    <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-5 w-11/12 mx-auto gap-4 cursor-pointer"> @for (brand of
+        _AllIphone ; track $index) {
+        <div class="product border border-green-400  overflow-hidden">
+            <img class="h-80 w-full " [src]="brand.image" alt="">
+        </div>
+        }
+    </div>
+
+</section>

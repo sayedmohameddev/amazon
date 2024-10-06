@@ -1,0 +1,98 @@
+<section class="register">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 justify-center items-center w-10/12 mx-auto overflow-hidden">
+
+        <div>
+            <div
+                class=" animate__animated animate__fadeInRight w-12/12 mx-auto p-5 shadow-lg border  rounded-3xl bg-green-50  my-4">
+
+                <h2 class="text-2xl text-main">Login Now :</h2>
+                <form [formGroup]="loginForm" class="py-2 w-10/12 mx-auto" (ngSubmit)="loginSupmet()">
+                    <!--<< input email >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="email">{{"Regester.email"|translate}}</label>
+                        <input formControlName="email" id="email" placeholder="EX : mostafa@gmail.com"
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+
+                        @if (loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (loginForm.get('email')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (loginForm.get('email')?.errors?.['email']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This email is
+                                invalid
+                            </p>
+                            }
+
+
+                        </div>
+                        }
+                    </div>
+
+
+                    <!--<< input pass >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="password">{{"Regester.password"|translate}}</label>
+                        <input formControlName="password" id="password"
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+
+                        @if (loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (loginForm.get('password')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (loginForm.get('password')?.errors?.['pattern']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">Wrong
+                                passcode. Must
+                                start with a letter and be at least 7 numbers
+                            </p>
+                            }
+                        </div>
+                        }
+
+                    </div>
+
+
+
+
+                    <!--<< btn >>-->
+                    <div class="flex md:flex-row md:justify-end  justify-center   pt-3 items-center flex-col">
+                        @if ( loginForm ) {
+                        <div class="grow text-center animate__animated animate__bounceIn md:me-10 m-auto my-1">
+                            @if (errorMessege ) {
+                            <h2 class=" py-1 px-8 bg-orange-400 rounded-lg text-white font-semibold">
+                                {{errorMessege}}</h2>
+                            }
+                        </div>
+                        }
+
+
+                        <button [disabled]="loginForm.invalid||isLoding" type="submit"
+                            class="btn-main hover:px-10 transition-all  ">
+                            @if (isLoding) {<i
+                                class="fa-solid fa-spinner fa-spin px-2"></i>}{{"Regester.logIn"|translate}}</button>
+                    </div>
+                </form>
+
+                <div class="text-center md:text-left md:ml-10 ">
+                    <a routerLink="/forgetpassword"
+                        class="font-bold shadow cursor-pointer">{{"Regester.foregetPass"|translate}}
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div>
+            <div class="p-14 animate__animated   animate__fadeInLeft"><img class="w-full imgAuth"
+                    src="./assets/images/auth/login2.jpg" alt=""></div>
+        </div>
+
+
+
+    </div>
+</section>

@@ -1,0 +1,54 @@
+{
+    "slidercategoris": [
+        {
+            "image": "./assets/images/CategoriesOffers/price1.gif"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/price2.gif"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/price3.gif"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/price4.gif"
+        }
+    ],
+    "CategoriesOffers": [
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer2.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer3.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer9.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer5.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer6.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer7.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer8.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer9.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer10.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer11.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer12.jpg"
+        },
+        {
+            "image": "./assets/images/CategoriesOffers/catOffer14.jpg"
+        }
+    ]
+}

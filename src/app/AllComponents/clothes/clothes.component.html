@@ -1,0 +1,14 @@
+<section>
+
+
+    <p class="text-main text-3xl py-6 text-center shadow-lg">عروض نهاية الموسم من قطونيل</p>
+
+    <div class="grid grid-cols-3 md:grid-cols-6  w-11/12 mx-auto gap-4 cursor-pointer py-3"> @for (brand of
+        allClothes; track $index) {
+        <div class=" border-green-400  overflow-hidden">
+            <img class="animate__animated animate__wobble  " [src]="brand.image" alt="">
+        </div>
+        }
+    </div>
+
+</section>

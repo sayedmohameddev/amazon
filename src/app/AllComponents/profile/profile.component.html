@@ -1,0 +1,125 @@
+<section>
+
+    <div class="container pt-2">
+        <div class="flex flex-col justify-center items-center">
+            <img width="200px" class="block rounded-full" src="./assets/images/profile.jpg" alt="">
+            <p class="py-1">{{"profile.userName"|translate}} :<span class="text-2xl text-main">{{userName}}</span></p>
+            <p>{{"profile.role"|translate}} : <span class="text-2xl text-main">{{rolse}}</span> </p>
+        </div>
+
+    </div>
+
+
+    <form class="w-8/12 md:w-6/12 mx-auto pb-4" [formGroup]="addresForm" (ngSubmit)="addAddres()">
+
+
+
+        <div class="py-0.5">
+            <label class="font-semibold px-1" for="userdetails">{{"profile.name"|translate}}</label>
+            <input formControlName="name" id="userdetails"
+                class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+            @if (addresForm.get('name')?.errors && addresForm.get('name')?.touched) {
+            <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                @if (addresForm.get('name')?.errors?.['required']) {
+                <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                    Required
+                </p>}
+                @else if (addresForm.get('name')?.errors?.['minlength']) {
+                <p class="p-1 animate__animated text-white font-bold animate__bounceIn px-2">Your
+                    name must be at least 3 letters long
+                </p>
+                }
+
+            </div>
+            }
+        </div>
+
+        <!--<< input detilse >>-->
+        <div class="py-0.5">
+            <label class="font-semibold px-1" for="userdetails">{{"profile.Details"|translate}}</label>
+            <input formControlName="details" id="userdetails"
+                class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+            @if (addresForm.get('details')?.errors && addresForm.get('details')?.touched) {
+            <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                @if (addresForm.get('details')?.errors?.['required']) {
+                <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                    Required
+                </p>}
+                @else if (addresForm.get('details')?.errors?.['minlength']) {
+                <p class="p-1 animate__animated text-white font-bold animate__bounceIn px-2">Your
+                    details must be at least 3 letters long
+                </p>
+                }
+
+            </div>
+            }
+        </div>
+
+
+        <!--<< input phone >>-->
+        <div class=" py-0.5">
+            <label class="font-semibold px-1" for="phone">{{"profile.phone"|translate}}</label>
+            <input formControlName="phone" id="phone" placeholder=""
+                class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="tel">
+
+            @if (addresForm.get('phone')?.errors && addresForm.get('phone')?.touched) {
+            <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                @if (addresForm.get('phone')?.errors?.['required']) {
+                <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                    Required
+
+                </p>
+                }@else if (addresForm.get('phone')?.errors?.['pattern']) {
+                <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">this phone
+                    number is
+                    Invalid
+                </p>
+                }
+            </div>
+            }
+
+
+        </div>
+
+
+        <div class="py-0.5">
+            <label class="font-semibold px-1" for="usercity">{{"profile.city"|translate}}</label>
+            <input formControlName="city" id="usercity"
+                class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+            @if (addresForm.get('city')?.errors && addresForm.get('city')?.touched) {
+            <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                @if (addresForm.get('city')?.errors?.['required']) {
+                <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                    Required
+                </p>}
+                @else if (addresForm.get('city')?.errors?.['minlength']) {
+                <p class="p-1 animate__animated text-white font-bold animate__bounceIn px-2">Your
+                    city must be at least 3 letters long
+                </p>
+                }
+
+            </div>
+            }
+        </div>
+
+
+        <div class="flex md:flex-row md:justify-end  justify-center   pt-3 items-center flex-col">
+            @if ( addresForm ) {
+            <div class="grow text-center animate__animated animate__bounceIn md:me-10 m-auto my-1">
+                @if (errorMessege) {
+                <h2 class=" py-1 px-8 bg-orange-400 rounded-lg text-white font-semibold">
+                    {{errorMessege}}</h2>
+                }
+            </div>
+            }
+
+
+            <button [disabled]="addresForm.invalid||isLoding" type="submit"
+                class="btn-main hover:px-10 transition-all disabled:bg-red-400 ">
+                @if (isLoding) {<i
+                    class="fa-solid fa-spinner fa-spin px-2"></i>}{{"profile.addyouraddress"|translate}}</button>
+        </div>
+
+
+    </form>
+</section>

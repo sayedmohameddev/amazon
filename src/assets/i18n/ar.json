@@ -1,0 +1,60 @@
+{
+    "lang": "اللغه",
+    "Regester": {
+        "RegisterNow": "انشاء حساب الان ",
+        "userName": "اسم المستخدم",
+        "email": "البريد الالكتروني",
+        "phone": "رقم الهاتف",
+        "password": "رقم السر",
+        "rePassword": "اعاده كتابه رقم السر",
+        "logIn": "تسجيل الدخول",
+        "foregetPass": "هل نسيت كلمة السر ؟"
+    },
+    "forgetPass": {
+        "submit": "ارسال",
+        "restCode": "تفقد بريدك الالكتروني",
+        "sendcode": "ارسال الكود",
+        "newPassword": "كلمة سر جديده"
+    },
+    "navbar": {
+        "Home": "الرئيسيه",
+        "Cart": "السله",
+        "Products": "المنتجات",
+        "Categories": "الاقسام",
+        "Brands": "العلامه التجاريه",
+        "logIn": "تسجيل الدخول",
+        "Logout": "تسجيل الخروج",
+        "clothes": "ملابس",
+        "Regester": "انشاء حساب",
+        "Settings": "اعدادات",
+        "profile": "صفحتي"
+    },
+    "home": {
+        "addtocart": "اضافه اي السله"
+    },
+    "cart": {
+        "Product": "المنتج",
+        "Quantity": "العدد",
+        "Price": "السعر",
+        "Action": "اجراء",
+        "Remove": "ازاله السله",
+        "checkout": "ادفع الان",
+        "totalCartPrice": "اجمالي السله"
+    },
+    "footer": {
+        "messageFooter": "سوف نرسل لك رابطا لفتحه على هاتفك لتحميل التطبيق",
+        "btnfooter": "ارسل لينك التطبيق",
+        "payment": "شركاء الدفع",
+        "email": "البريد الالكتروني",
+        "GetDeliverise": "احصل على التسليم مع FreshCart"
+    },
+    "profile": {
+        "userName": "اسم المستخجم",
+        "role": "الدور",
+        "name": "الاسم",
+        "Details": "التفاصيل",
+        "phone": "رقم الهاتف",
+        "city": "المدينه",
+        "addyouraddress": "اضافه عنوان"
+    }
+}

@@ -1,0 +1,34 @@
+{
+    "iphone": [
+        {
+            "image": "./assets/images/iphone/iphone1.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone11.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone18.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone3.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone4.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone5.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone2.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone5.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone112.jpg"
+        },
+        {
+            "image": "./assets/images/iphone/iphone19.jpg"
+        }
+    ]
+}

@@ -1,0 +1,15 @@
+<section class="overflow-hidden py-1 px-10 shadow-sm animate__animated animate__fadeInRightBig">
+    <div class="px-6 ms-10">
+        <h2 class="font-bold text-main shadow-md py-1 text-xl">Categories publer</h2>
+    </div>
+    <owl-carousel-o [options]="customOptionsCat">
+
+        @for (item of allrecommended; track $index) {
+        <ng-template carouselSlide>
+            <img class="h-40 p-4 w-full cursor-pointer " [src]="item.image" alt="CategoiesLogo">
+            <p class="text-center font-bold">{{item.name}}</p>
+
+        </ng-template>
+        }
+    </owl-carousel-o>
+</section>

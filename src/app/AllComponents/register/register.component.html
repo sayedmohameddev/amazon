@@ -1,0 +1,166 @@
+<section class="register">
+
+    <div class="grid grid-cols-1 md:grid-cols-2 items-center justify-center w-10/12 mx-auto overflow-hidden">
+        <div class="animate__animated animate__fadeInRight">
+            <div><img class="p-10" src="./assets/images/auth/register2.jpg" alt=""></div>
+        </div>
+        <div>
+            <div class="w-full mx-auto p-5 shadow-sm-light rounded-3xl bg-slate-50  ">
+
+                <h2 class="text-2xl text-main">{{"Regester.RegisterNow"|translate}} :</h2>
+                <form [formGroup]="RegisterForm" class="animate__animated animate__fadeInLeft  py-4 w-10/12 mx-auto"
+                    (ngSubmit)="RegisterSupmet()">
+                    <!--<< input name >>-->
+                    <div class="py-0.5">
+                        <label class="font-semibold px-1" for="userName">{{"Regester.userName"|translate}}</label>
+                        <input formControlName="name" id="userName"
+                            class=" is-valid  my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+                        @if (RegisterForm.get('name')?.errors && RegisterForm.get('name')?.touched) {
+                        <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400  rounded-lg">
+                            @if (RegisterForm.get('name')?.errors?.['required']) {
+                            <p class=" p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+                            </p>}
+                            @else if (RegisterForm.get('name')?.errors?.['minlength']) {
+                            <p class=" text-center p-1 animate__animated text-white font-bold animate__bounceIn px-2">
+                                Your name must be at least 3 letters long
+                            </p>
+                            }
+
+                            @else if (RegisterForm.get('name')?.errors?.['maxlength']) {
+                            <p class="text-center p-1 animate__animated text-white font-bold animate__bounceIn  px-2">It
+                                must not exceed 20 characters</p>
+                            }
+                        </div>
+                        }
+                    </div>
+
+                    <!--<< input email >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="email">{{"Regester.email"|translate}}</label>
+                        <input formControlName="email" id="email" placeholder="EX : mostafa@gmail.com"
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+
+                        @if (RegisterForm.get('email')?.errors && RegisterForm.get('email')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (RegisterForm.get('email')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (RegisterForm.get('email')?.errors?.['email']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This email is
+                                invalid
+                            </p>
+                            }
+
+
+                        </div>
+                        }
+                    </div>
+
+                    <!--<< input phone >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="phone">{{"Regester.phone"|translate}}</label>
+                        <input formControlName="phone" id="phone" placeholder=""
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+
+                        @if (RegisterForm.get('phone')?.errors && RegisterForm.get('phone')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (RegisterForm.get('phone')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (RegisterForm.get('phone')?.errors?.['pattern']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">this phone
+                                number is
+                                Invalid
+                            </p>
+                            }
+                        </div>
+                        }
+
+
+                    </div>
+
+                    <!--<< input pass >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="password">{{"Regester.password"|translate}}</label>
+                        <input formControlName="password" id="password"
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+
+                        @if (RegisterForm.get('password')?.errors && RegisterForm.get('password')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (RegisterForm.get('password')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (RegisterForm.get('password')?.errors?.['pattern']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">Wrong
+                                passcode. Must
+                                start with a letter and be at least 7 numbers
+                            </p>
+                            }
+                        </div>
+                        }
+
+                    </div>
+
+                    <!--<< input RePass >>-->
+                    <div class=" py-0.5">
+                        <label class="font-semibold px-1" for="rePassword">{{"Regester.rePassword"|translate}}</label>
+                        <input formControlName="rePassword" id="rePassword"
+                            class=" my-1 border border-black block w-full  px-2 rounded-lg py-1" type="text">
+                        @if (RegisterForm.get('rePassword')?.errors && RegisterForm.get('rePassword')?.touched) {
+                        <div class=" animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                            @if (RegisterForm.get('rePassword')?.errors?.['required']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">This field is
+                                Required
+
+                            </p>
+                            }@else if (RegisterForm.get('rePassword')?.errors?.['pattern']) {
+                            <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2">Wrong
+                                passcode. Must
+                                start with a letter and be at least 7 numbers
+                            </p>
+                            }
+                        </div>
+                        }
+
+                    </div>
+
+                    @if (RegisterForm.errors?.['passMatched'] && RegisterForm.get('rePassword')?.touched) {
+                    <div class="animate__animated text-white font-bold animate__bounceIn bg-red-400 rounded-lg">
+                        <p class="p-1 animate__animated text-white font-bold animate__bounceIn  px-2 ">
+                            password does not match
+                        </p>
+                    </div>
+                    }
+
+
+                    <!--<< btn >>-->
+                    <div class="flex md:flex-row md:justify-end  justify-center   pt-3 items-center flex-col">
+                        @if ( RegisterForm ) {
+                        <div class="grow text-center animate__animated animate__bounceIn md:me-10 m-auto my-1">
+                            @if (errorMessege) {
+                            <h2 class=" py-1 px-8 bg-orange-400 rounded-lg text-white font-semibold">
+                                {{errorMessege}}</h2>
+                            }
+                        </div>
+                        }
+
+
+                        <button [disabled]="RegisterForm.invalid||isLoding" type="submit"
+                            class="btn-main hover:px-10 transition-all  ">
+                            @if (isLoding) {<i class="fa-solid fa-spinner fa-spin px-2"></i>}{{"navbar.Regester"|translate}}</button>
+                    </div>
+                </form>
+
+
+            </div>
+        </div>
+    </div>
+
+</section>

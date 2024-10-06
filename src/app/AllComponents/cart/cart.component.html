@@ -1,0 +1,90 @@
+<section class="card md:w-8/12 mx-auto py-10">
+
+
+
+
+    <div class="flex justify-between px-4 items-center my-2 bg-gray-200 p-2">
+        <p class="p-2 font-bold ">{{"cart.totalCartPrice"|translate}} : <span class="text-main">{{_totalprice}}</span>
+        </p>
+        <button (click)="clearCart()" class=" bg-white border border-red-500 font-bold  px-2 py-1 rounded-lg  ">
+            {{"cart.Remove"|translate}} <i class="fa-solid fa-trash-can text-2xl text-red-500 "></i>
+        </button>
+    </div>
+
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
+        <table class="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+            <thead class="text-lg font-bold  text-gray-700 uppercase bg-gray-200 dark:bg-gray-700 dark:text-gray-400">
+                <tr>
+                    <th scope="col" class="px-16 py-3">
+                        <span class="sr-only">Image</span>
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        {{"cart.Product"|translate}}
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        {{"cart.Quantity"|translate}}
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        {{"cart.Price"|translate}}
+                    </th>
+                    <th scope="col" class="px-6 py-3">
+                        {{"cart.Action"|translate}}
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @for (item of _allProductsCart ; track $index) {
+                <tr
+                    class="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600">
+                    <td class="p-4">
+                        <img [src]="item.product.imageCover" class="w-14 md:w-32 max-w-full max-h-full"
+                            alt="Apple Watch">
+                    </td>
+                    <td class="px-6 py-4  text-gray-900 dark:text-white font-bold text-main">
+                        {{item.product.title}}
+                    </td>
+                    <td class="px-6 py-4">
+                        <div class="flex items-center ">
+                            <button (click)="editeQuentity(item.product._id , item.count-1) "
+                                class="hover:bg-red-600 hover:text-white hover:p-2   inline-flex items-center justify-center p-1 me-3 text-sm font-medium h-6 w-6 text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none  focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                type="button">
+                                <i class="font-bold fa-solid fa-minus"></i></button>
+
+                            <div>
+                                <input type="number" readonly id="first_product"
+                                    class="bg-gray-50 w-14 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block px-2.5 py-1 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+                                    [placeholder]="item.count" />
+                            </div>
+
+                            <button (click)="editeQuentity(item.product._id , item.count +1)"
+                                class="hover:bg-green-600 hover:text-white hover:p-2 inline-flex items-center justify-center h-6 w-6 p-1 ms-3 text-sm font-medium text-gray-500 bg-white border border-gray-300 rounded-full focus:outline-none focus:ring-4 focus:ring-gray-200 dark:bg-gray-800 dark:text-gray-400 dark:border-gray-600 dark:hover:bg-gray-700 dark:hover:border-gray-600 dark:focus:ring-gray-700"
+                                type="button">
+                                <i class="font-bold fa-solid fa-plus"></i> </button>
+                        </div>
+                    </td>
+                    <td class="px-6 py-4 font-semibold text-gray-900 dark:text-white">
+                        ${{item.price}}
+                    </td>
+                    <td class="px-6 py-4">
+                        <a (click)="RemoveProduct(item.product.id)"
+                            class="cursor-pointer font-medium text-red-600 dark:text-red-500 hover:underline">
+                            <i class="fa-solid fa-trash-can text-2xl "></i>
+                        </a>
+                    </td>
+                </tr>
+                }
+
+
+
+
+
+            </tbody>
+        </table>
+
+        <div class="py-4  text-center">
+            <button (click)="checkout()" class="btn-main w-1/2 mx-auto"> {{"cart.checkout"|translate}}
+            </button>
+        </div>
+    </div>
+</section>

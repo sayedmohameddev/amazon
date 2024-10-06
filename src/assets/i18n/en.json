@@ -1,0 +1,59 @@
+{
+    "lang": "lang",
+    "Regester": {
+        "RegisterNow": "Register Now",
+        "userName": "userName",
+        "email": "email",
+        "phone": "phone",
+        "password": "password",
+        "rePassword": "rePassword",
+        "logIn": "logIn",
+        "foregetPass": "Are you Forgot Paswoer"
+    },
+    "forgetPass": {
+        "submit": "submit",
+        "restCode": "Reset code sent to your email",
+        "sendcode": "Reset code",
+        "newPassword": "new Password"
+    },
+    "navbar": {
+        "Home": "Home",
+        "Products": "Products",
+        "Categories": "Categories",
+        "Brands": "Brands",
+        "logIn": "logIn",
+        "Logout": "Logout",
+        "clothes": "clothes",
+        "Settings": "Settings",
+        "profile": "profile",
+        "Regester": "Regester"
+    },
+    "home": {
+        "addtocart": "ADD TOO CART"
+    },
+    "cart": {
+        "Product": "Product",
+        "Quantity": "Quantity",
+        "Price": "Price",
+        "Action": "Action",
+        "Remove": "Remove all cart",
+        "checkout": "checkout",
+        "totalCartPrice": "total Cart Price"
+    },
+    "footer": {
+        "messageFooter": "We Will send you a link open it on your phone to thhe Downlodad ther app",
+        "btnfooter": "Shear App Link",
+        "payment": "payment partenrs",
+        "email": "email",
+        "GetDeliverise": "Get Deliverise whith FreshCart"
+    },
+    "profile": {
+        "userName": "userName",
+        "role": "role",
+        "name": "name",
+        "Details": "Details",
+        "phone": "phone",
+        "city": "city",
+        "addyouraddress": "add your address"
+    }
+}
